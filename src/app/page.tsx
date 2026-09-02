@@ -1,32 +1,80 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 
 export default function BirthdayWish() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 flex flex-col items-center justify-center p-4">
-      <div className="bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl p-10 max-w-2xl w-full text-center transform hover:scale-105 transition-transform duration-500 border border-white/50">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-6 animate-pulse drop-shadow-sm">
-          Happy Birthday! 🎂
-        </h1>
+    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 flex flex-col items-center justify-center p-4 overflow-hidden relative">
+      {/* Container for 3D perspective */}
+      <div 
+        className="relative w-full max-w-2xl h-[600px] z-10"
+        style={{ perspective: '1000px' }}
+      >
         
-        <p className="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-          Wishing you a fantastic day filled with joy, laughter, and lots of cake! 
-          May all your dreams come true this year. 🎉
-        </p>
+        {/* Flip inner container */}
+        <div 
+          className="w-full h-full relative transition-transform duration-1000"
+          style={{ 
+            transformStyle: 'preserve-3d',
+            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' 
+          }}
+        >
+          {/* Front of the Card */}
+          <div 
+            className="absolute w-full h-full bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center border border-white/50"
+            style={{ backfaceVisibility: 'hidden' }}
+          >
+            {/* Happy Birthday on one line using whitespace-nowrap and responsive text size */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-4 animate-pulse drop-shadow-sm whitespace-nowrap">
+              Happy Birthday!
+            </h1>
+            
+            {/* Cake GIF */}
+            <img 
+              src="https://media.tenor.com/B94mR1k1s-wAAAAi/birthday-cake.gif" 
+              alt="Birthday Cake" 
+              className="w-48 h-48 object-contain mb-4"
+            />
+            
+            <p className="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
+              Wishing you a fantastic day filled with joy, laughter, and lots of cake! 
+              May all your dreams come true this year. 🎉
+            </p>
 
-        <div className="flex justify-center gap-6 text-5xl mb-10">
-          <span className="animate-bounce" style={{ animationDelay: '0ms' }}>🎈</span>
-          <span className="animate-bounce" style={{ animationDelay: '150ms' }}>🎁</span>
-          <span className="animate-bounce" style={{ animationDelay: '300ms' }}>🥳</span>
-          <span className="animate-bounce" style={{ animationDelay: '450ms' }}>✨</span>
+            <button 
+              onClick={() => setIsFlipped(true)}
+              className="bg-gradient-to-r from-pink-500 to-violet-500 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:from-pink-600 hover:to-violet-600 transition-all duration-300 active:scale-95 cursor-pointer"
+            >
+              Open Your Gift!
+            </button>
+          </div>
+
+          {/* Back of the Card */}
+          <div 
+            className="absolute w-full h-full bg-gradient-to-br from-violet-100 to-pink-100 shadow-2xl rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white/50"
+            style={{ 
+              backfaceVisibility: 'hidden',
+              transform: 'rotateY(180deg)' 
+            }}
+          >
+            <h2 className="text-3xl md:text-5xl font-extrabold text-violet-600 mb-8 leading-tight">
+              kal mene aa rhe hu tujhe vo sab se bada gift hai 😂
+            </h2>
+            
+            <button 
+              onClick={() => setIsFlipped(false)}
+              className="mt-8 bg-white text-violet-500 font-bold text-lg py-3 px-8 rounded-full shadow hover:shadow-md transition-all duration-300 active:scale-95 cursor-pointer"
+            >
+              Close Gift
+            </button>
+          </div>
         </div>
-
-        <button className="bg-gradient-to-r from-pink-500 to-violet-500 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:from-pink-600 hover:to-violet-600 transition-all duration-300 active:scale-95">
-          Open Your Gift!
-        </button>
       </div>
       
-      {/* Confetti simulation using simple CSS (optional visual touch) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50">
+      {/* Confetti */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
         {[...Array(20)].map((_, i) => (
           <div 
             key={i}

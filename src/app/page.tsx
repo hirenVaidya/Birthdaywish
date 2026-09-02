@@ -44,7 +44,7 @@ export default function BirthdayWish() {
             />
             
             <p className="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
-              Wishing you a fantastic day filled with joy, laughter, and lots of cake! 
+              A happiest 41st birthday! Wishing you a fantastic day filled with joy, laughter, and lots of cake! 
               May all your dreams come true this year. 🎉
             </p>
 

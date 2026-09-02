@@ -31,22 +31,17 @@ export default function BirthdayWish() {
             className="absolute w-full h-full bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center border border-white/50"
             style={{ backfaceVisibility: 'hidden' }}
           >
-            {/* Happy Birthday with Cake Inline */}
-            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 animate-pulse drop-shadow-sm whitespace-nowrap">
-                Happy
-              </h1>
-              
-              <img 
-                src="https://media.tenor.com/B94mR1k1s-wAAAAi/birthday-cake.gif" 
-                alt="Birthday Cake" 
-                className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain"
-              />
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 animate-pulse drop-shadow-sm whitespace-nowrap">
-                Birthday!
-              </h1>
-            </div>
+            {/* Happy Birthday on one line using whitespace-nowrap and responsive text size */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-4 animate-pulse drop-shadow-sm whitespace-nowrap">
+              Happy Birthday!
+            </h1>
+            
+            {/* Cake GIF */}
+            <img 
+              src="https://media.tenor.com/B94mR1k1s-wAAAAi/birthday-cake.gif" 
+              alt="Birthday Cake" 
+              className="w-48 h-48 object-contain mb-4"
+            />
             
             <p className="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
               Wishing you a fantastic day filled with joy, laughter, and lots of cake! 

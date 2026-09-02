@@ -32,7 +32,7 @@ export default function BirthdayWish() {
             style={{ backfaceVisibility: 'hidden' }}
           >
             {/* Happy Birthday on one line using whitespace-nowrap and responsive text size */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-4 animate-pulse drop-shadow-sm whitespace-nowrap">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-4 drop-shadow-sm whitespace-nowrap">
               Happy Birthday!
             </h1>
             

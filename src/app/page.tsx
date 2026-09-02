@@ -73,7 +73,7 @@ export default function BirthdayWish() {
             }}
           >
             <h2 className="text-3xl md:text-5xl font-extrabold text-violet-600 mb-8 leading-tight">
-              kal milne aa rhe hu vo he sab se bada gift hai 😂
+              Aaj milne aa rhe hu vo he sab se bada gift hai 😂
             </h2>
             
             <button 

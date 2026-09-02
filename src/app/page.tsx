@@ -14,7 +14,7 @@ export default function BirthdayWish() {
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 flex flex-col items-center justify-center p-4 overflow-hidden relative">
       {/* Container for 3D perspective */}
       <div 
-        className="relative w-full max-w-2xl h-[600px] z-10"
+        className="relative w-full max-w-2xl z-10"
         style={{ perspective: '1000px' }}
       >
         
@@ -28,7 +28,7 @@ export default function BirthdayWish() {
         >
           {/* Front of the Card */}
           <div 
-            className="absolute w-full h-full bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center border border-white/50"
+            className="w-full bg-white/80 backdrop-blur-sm shadow-2xl rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center border border-white/50"
             style={{ backfaceVisibility: 'hidden' }}
           >
             {/* Happy Birthday on one line using whitespace-nowrap and responsive text size */}

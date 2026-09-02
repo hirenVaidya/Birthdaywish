@@ -37,11 +37,11 @@ export default function BirthdayWish() {
               Happy Birthday!
             </h1>
             
-            {/* Cake GIF */}
+            {/* Cute GIF */}
             <img 
-              src="https://media.tenor.com/B94mR1k1s-wAAAAi/birthday-cake.gif" 
-              alt="Birthday Cake" 
-              className="w-48 h-48 object-contain mb-4"
+              src="https://media.giphy.com/media/8vQSQ3cNXuDba/giphy.gif" 
+              alt="Cute Birthday GIF" 
+              className="w-48 h-48 object-contain mb-6 rounded-2xl shadow-sm"
             />
             
             <div className="text-lg md:text-xl text-gray-700 mb-6 font-medium leading-relaxed space-y-4">

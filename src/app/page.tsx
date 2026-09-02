@@ -1,9 +1,14 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function BirthdayWish() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200 flex flex-col items-center justify-center p-4 overflow-hidden relative">
@@ -74,22 +79,24 @@ export default function BirthdayWish() {
       </div>
       
       {/* Confetti */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
-        {[...Array(20)].map((_, i) => (
-          <div 
-            key={i}
-            className="absolute animate-pulse bg-pink-400 rounded-full"
-            style={{
-              width: Math.random() * 10 + 5 + 'px',
-              height: Math.random() * 10 + 5 + 'px',
-              top: Math.random() * 100 + '%',
-              left: Math.random() * 100 + '%',
-              animationDuration: (Math.random() * 3 + 2) + 's',
-              animationDelay: (Math.random() * 2) + 's',
-            }}
-          />
-        ))}
-      </div>
+      {isMounted && (
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute animate-pulse bg-pink-400 rounded-full"
+              style={{
+                width: Math.random() * 10 + 5 + 'px',
+                height: Math.random() * 10 + 5 + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                animationDuration: (Math.random() * 3 + 2) + 's',
+                animationDelay: (Math.random() * 2) + 's',
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -37,12 +37,10 @@ export default function BirthdayWish() {
               Happy Birthday!
             </h1>
             
-            {/* Cute GIF */}
-            <img 
-              src="https://media.giphy.com/media/8vQSQ3cNXuDba/giphy.gif" 
-              alt="Cute Birthday GIF" 
-              className="w-48 h-48 object-contain mb-6 rounded-2xl shadow-sm"
-            />
+            {/* Celebration Emoji */}
+            <div className="text-7xl sm:text-8xl md:text-9xl mb-6 drop-shadow-xl animate-bounce" style={{ animationDuration: '2s' }}>
+              🎂
+            </div>
             
             <div className="text-lg md:text-xl text-gray-700 mb-6 font-medium leading-relaxed space-y-4">
               <p>

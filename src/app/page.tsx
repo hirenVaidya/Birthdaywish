@@ -43,10 +43,17 @@ export default function BirthdayWish() {
               className="w-48 h-48 object-contain mb-4"
             />
             
-            <p className="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
-              A happiest 41st birthday! Wishing you a fantastic day filled with joy, laughter, and lots of cake! 
-              May all your dreams come true this year. 🎉
-            </p>
+            <div className="text-lg md:text-xl text-gray-700 mb-6 font-medium leading-relaxed space-y-4">
+              <p>
+                Happy 41st Birthday! 🎉❤️ Wishing you a fantastic day filled with joy, laughter, happiness, and lots of cake! May all your dreams come true this year and may this new chapter of your life bring you endless beautiful moments.
+              </p>
+              <p>
+                This is the first birthday of yours that I get to be a part of, and that makes it extra special for me. ❤️ and we will celebrate many, many more birthdays with you. I’m truly grateful to have you in my life, and I want you to know that I’m here to stay and be a part of your life forever. 🥰❤️
+              </p>
+              <p>
+                Happy Birthday once again! Here’s to you, to us, and to all the beautiful memories we’re going to create together. 🎂✨❤️
+              </p>
+            </div>
 
             <button 
               onClick={() => setIsFlipped(true)}

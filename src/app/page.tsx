@@ -78,22 +78,23 @@ export default function BirthdayWish() {
         </div>
       </div>
       
-      {/* Confetti */}
+      {/* Falling Hearts and Confetti */}
       {isMounted && (
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-50 z-0">
-          {[...Array(20)].map((_, i) => (
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          {[...Array(40)].map((_, i) => (
             <div 
               key={i}
-              className="absolute animate-pulse bg-pink-400 rounded-full"
+              className="absolute animate-fall"
               style={{
-                width: Math.random() * 10 + 5 + 'px',
-                height: Math.random() * 10 + 5 + 'px',
-                top: Math.random() * 100 + '%',
+                fontSize: Math.random() * 20 + 15 + 'px',
                 left: Math.random() * 100 + '%',
-                animationDuration: (Math.random() * 3 + 2) + 's',
-                animationDelay: (Math.random() * 2) + 's',
+                top: '-10%',
+                animationDuration: (Math.random() * 5 + 4) + 's',
+                animationDelay: (Math.random() * 5) + 's',
               }}
-            />
+            >
+              {i % 3 === 0 ? '💖' : i % 3 === 1 ? '✨' : '❤️'}
+            </div>
           ))}
         </div>
       )}
